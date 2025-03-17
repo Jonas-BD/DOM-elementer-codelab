@@ -8,6 +8,10 @@ Du skal finde elementet med id="yellowFigure" og console logge det.
 */
 
 // din kode her
+const redFigure = document.getElementById('redFigure');
+console.log(redFigure);
+const yellowFigure = document.getElementById('yellowFigure');
+console.log(yellowFigure);
 
 
 /* opgave 1.2
@@ -17,6 +21,8 @@ farven på elementerne skal være blå. brug evt. elelement.style.backgroundColo
 
 
 // din kode her
+redFigure.style.backgroundColor = 'blue';
+yellowFigure.style.backgroundColor = 'blue';
 
 
 
@@ -28,6 +34,13 @@ Du skal oprette følgende HTML elementer i Elementet med id opgaveTwo.
 
 
 // din kode her
+const opgaveTwo = document.getElementById('opgaveTwo');
+const h2 = document.createElement('h2');
+h2.innerHTML = 'Opgave 2.1 løsning';
+opgaveTwo.appendChild(h2);
+const p = document.createElement('p');
+p.innerHTML = 'Jeg har løst opgave 2.1';
+opgaveTwo.appendChild(p);
 
 
 // opgave 3 liveHTML lists
@@ -36,6 +49,8 @@ Du skal finde alle elementer med klassen purpleFigures og console logge resultat
 */
 
 // din kode her
+const purpleFigures = document.getElementsByClassName('purpleFigures');
+console.log(purpleFigures);
 
 
 /* opgave 3.2
@@ -46,6 +61,10 @@ eller bruge qurySelectorAll og foreach til at loope.
 */
 
 // din kode her
+const purpleFiguresArray = Array.from(purpleFigures);
+purpleFiguresArray.map((element) => {
+    element.style.backgroundColor = 'red';
+});
 
 
 /* opgave 3.3
@@ -55,6 +74,9 @@ myElement.children[0].innerHTML til at ændre 1. child elements inner html.
 
 
 // din kode her
+purpleFiguresArray.map((element) => {
+    element.children[0].innerHTML = 'RED';
+});
 
 
 
@@ -72,7 +94,20 @@ const myData = {
 
 
 // din kode her
+const opgaveFour = document.getElementById('opgaveFour');
 
+const myDataName = document.createElement('h4');
+myDataName.innerHTML = myData.name;
+opgaveFour.appendChild(myDataName);
+
+const myDataImage = document.createElement('img');
+myDataImage.src = myData.image;
+myDataImage.alt = myData.name;
+opgaveFour.appendChild(myDataImage);
+
+const myDataDescription = document.createElement('p');
+myDataDescription.innerHTML = myData.description;
+opgaveFour.appendChild(myDataDescription);
 
 
 
